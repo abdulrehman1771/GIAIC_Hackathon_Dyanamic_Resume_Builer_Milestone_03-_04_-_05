@@ -261,9 +261,6 @@ function validateEmail(email: string): boolean {
 }
 
 // Example usage:
-const name1 = (<HTMLInputElement>document.getElementsByClassName('formName')[0]).value;
-const niche = (<HTMLInputElement>document.getElementsByClassName('formNiche')[0]).value;
-const email = (<HTMLInputElement>document.getElementsByClassName('formEmail')[0]).value;
 
 document.getElementById('formEmail')?.addEventListener('input', function () {
     const emailInput = <HTMLInputElement>document.getElementById('formEmail');
@@ -293,6 +290,10 @@ document.getElementById('downloadButton')?.addEventListener('click', ()=>{
 // Submit CV Button
 const formSubmitButton = document.querySelector('.formSubmitButton')
 formSubmitButton?.addEventListener('click', ()=>{
+    const name1 = (<HTMLInputElement>document.getElementsByClassName('formName')[0]).value;
+    const niche = (<HTMLInputElement>document.getElementsByClassName('formNiche')[0]).value;
+    const email = (<HTMLInputElement>document.getElementsByClassName('formEmail')[0]).value;
+
     if (validateEmail(email) && niche && name1){
         
         {

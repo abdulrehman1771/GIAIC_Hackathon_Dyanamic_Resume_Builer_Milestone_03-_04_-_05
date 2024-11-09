@@ -181,9 +181,6 @@ function validateEmail(email) {
     return emailRegex.test(email);
 }
 // Example usage:
-const name1 = document.getElementsByClassName('formName')[0].value;
-const niche = document.getElementsByClassName('formNiche')[0].value;
-const email = document.getElementsByClassName('formEmail')[0].value;
 document.getElementById('formEmail')?.addEventListener('input', function () {
     const emailInput = document.getElementById('formEmail');
     const errorMessage = document.getElementById('errorMessage');
@@ -207,6 +204,9 @@ document.getElementById('downloadButton')?.addEventListener('click', () => {
 // Submit CV Button
 const formSubmitButton = document.querySelector('.formSubmitButton');
 formSubmitButton?.addEventListener('click', () => {
+    const name1 = document.getElementsByClassName('formName')[0].value;
+    const niche = document.getElementsByClassName('formNiche')[0].value;
+    const email = document.getElementsByClassName('formEmail')[0].value;
     if (validateEmail(email) && niche && name1) {
         {
             // Adding Name to CV
