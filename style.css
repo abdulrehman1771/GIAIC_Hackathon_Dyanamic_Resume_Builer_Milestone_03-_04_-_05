@@ -1,0 +1,499 @@
+* {
+    margin: 0;
+    padding: 0;
+    color: rgb(230, 230, 230)
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+
+/* Loading Screen */
+#loadingScreen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 1); /* Light overlay */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; /* Ensure it's on top */
+    opacity: 1; /* Initial opacity */
+    transition: opacity 1.5s ease; /* Transition for opacity */
+}
+
+.hidden {
+    opacity: 0; /* Fade out effect */
+    pointer-events: none; /* Prevent interactions when hidden */
+    /* transition: 1s; */
+}
+
+.spinner {
+    border: 8px solid rgba(255, 255, 255, 0.1);
+    border-left-color: #E92A2A; /* Change color as needed */
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 1s linear infinite; /* Spinner animation */
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+
+
+
+
+/* FORM Starts Here */
+.bgLogo{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 1;
+    background-image: url('./images/ar_Logo.png');
+    background-repeat: no-repeat;
+    background-position-x: 50%;
+    background-position-y: 50%;
+    opacity: 25%;
+    background-size: 25%;
+}
+
+
+body{
+    width: 100%;
+    height: 100%;
+    /* position: fixed; */
+    background-color: rgb(10, 10, 10);
+}
+/* 
+.bgColor{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background-color: rgb(10, 10, 10);
+} */
+
+
+.formContainer{
+    position: absolute;
+    width: 100%;
+    left: 0%;
+    right: 0%;
+    height: 100%;
+    z-index: 10;
+}
+
+.formContainer ::selection{
+    background-color: #E92A2A;
+    /* color: white; */
+}
+
+
+.formDiv{
+    display: flex;
+    flex-wrap: wrap;
+    font-family:"Noto Sans", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    width: 75%;
+    margin: 0% auto;
+    justify-content: center;
+}
+
+@media screen and (max-width: 650px) {
+    .formDiv{
+        flex-direction: column;
+    }
+    .formDiv div{
+        width: 100% !important;
+    }
+}
+
+.formDiv div{
+    margin: 20px 0px;
+    width: 30%;
+}
+
+
+.formDiv input, .formDiv textarea{
+    width: 100%;
+    height: 30px;
+    outline: 1px solid lightgray;
+    box-shadow: inset 1px 1px 0 0 lightgray;
+    background-color: rgba(65, 65, 65, 60%);
+}
+
+.formDiv textarea{
+    height: 60px;
+}
+
+.formDiv input:focus, .formDiv textarea:focus{
+    outline: 2px solid #E92A2A;
+    transition: 500ms;
+    z-index: 99;
+}
+
+
+.star{
+    color: red;
+}
+
+.formDiv legend{
+    font-weight: 700;
+    border-bottom: 2px solid #E92A2A;
+}
+
+.formDiv fieldset{
+    padding: 6% 0% 6% 0%;
+    width: 80%;
+    display: inline;
+    border: none;
+    border-bottom: 2px solid gray;
+}
+
+.formDiv button{
+    margin-top: 5%;
+    padding: 2% 3%;
+    border: none;
+    background-color: #E92A2A;
+    color: white;
+}
+
+.formDiv button:hover{
+    background-color: #cc1414;
+}
+
+.formDiv button:active{
+    color: white;
+    background-color: rgb(0, 51, 0);
+}
+
+.contactInfo{
+    height: 10%;
+}
+
+
+.submitButton{
+    justify-content: center;
+    margin: 0px auto;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* FORM Ends Here */
+
+
+/* CV Print Format */
+@media print{
+    @media print {
+        @page {
+            size: A4;
+            margin: 10mm 0; /* Set the margin to 10mm */
+          }
+
+        body * {
+          visibility: hidden;
+        }
+        div.coloPickerDiv{
+            display: none;
+        }
+        
+        #resume, #resume * {
+          visibility: visible;
+        }
+        .showHideButton, .downloadButton, .shareButton{
+            display: none;
+        }
+        hr{
+            display: block !important   ;
+        }
+        #resume {
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 100%;
+          font-size: 0.5rem;
+        }
+        .main{
+            width: 50%;
+        }
+        .second{
+            width: 100%;
+
+        }
+      }
+}
+
+
+/* CV CSS Starts Here */
+
+.resume{
+    position: absolute;
+    top: 180%;
+    left: 0;
+    right: 0;
+    /* background-color: rgb(240, 240, 240); */
+    z-index: 999;
+    padding: 1% 2% 3% 2%;
+    display: none;
+}
+
+@media screen and (max-width:650px) {
+    .resume{
+        position: absolute;
+        top: 220%;
+
+    }
+    
+}
+
+
+@media screen and (max-width:1000px) {
+    .resume{
+        position: absolute;
+        left: 0;
+        right: 0;
+    }
+    .container2{
+        flex-direction: column;
+    }
+
+    .main{
+        width: 100% !important;
+    }
+    .second{
+        width: 96% !important;
+    }
+}
+
+@media screen and (max-width: 1050px) {
+    p, li{
+        font-size: 15px;
+    }
+    h1{
+        font-size: 25px;
+    }
+    .cvName{
+        font-size: 40px;
+    }
+    .cvNiche{
+        font-size: 25px;
+    }
+}
+
+.showHideButton{
+    margin-bottom: 10%;
+    padding: 5px;
+    border: 2px solid gray;
+    border-radius: 5px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1rem;
+    background-color: antiquewhite;
+    color: black;
+    cursor: pointer;
+}
+
+.showHideButton:hover{
+    background-color: bisque;
+}
+
+.showHideButton:active{
+    color: white;
+    background-color: black;
+}
+
+
+.container2{
+    display: flex;
+    width: 60%;
+    border-radius: 10%;
+    justify-content: center;
+    margin: auto;
+}
+
+
+.main{
+    min-width: 17vw;
+    background-color: #cc1414; /* Default CV Color*/
+    padding: 1% 0;
+    color: white;
+}
+
+.cvHeading{
+    text-align: center;
+    margin: 50px 0;
+    font-size: 3rem;
+}
+
+.pic{
+    background-repeat: no-repeat;
+    margin: 0px auto;
+    display: flex;
+    justify-content: center;
+}
+
+.pic img{
+    width: 200px;
+    height: 200px;
+    background-size:cover;
+    border-radius: 200px;
+}
+
+.contact{
+    text-align: left;
+    padding:  20px 30px;
+}
+
+.formatting{
+    line-height: 20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+h1{
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+ul{
+    list-style-type: none;
+}
+
+li{
+    line-height: 35px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1.1rem;
+}
+
+b, p{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1.1rem;
+}
+
+.second{
+    position: relative;
+    width: 55%;
+    text-align: left;
+    background-color: aliceblue;
+    padding: 2%;
+}
+
+.second h1, .second p,  #Experience li{
+    color: black;
+}
+
+p{
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+.cvName{
+    font-size: 60px;
+}
+
+.cvNiche{
+    font-size: 30px;
+}
+
+hr{
+    border: 1px solid black;
+}
+/* CV CSS Ends Here */
+
+
+
+
+/* Download Button */
+
+.button{
+    position: absolute;
+    left: 0%;
+    right: 0%;
+    top: 99%;
+    margin-top: 5%;
+    padding: 0.5% 0.8%;
+    /* margin: 0px auto; */
+    border: none;
+    background-color: #E92A2A;
+    color: white;
+    width: 10%;
+
+    /* margin: 0 auto;
+    justify-content: center; */
+}
+
+.button:hover{
+    background-color: #cc1414;
+}
+
+.button:active{
+    color: white;
+    background-color: rgb(0, 51, 0);
+}
+
+.downloadButton{
+    margin: 0 39%;
+}
+
+.shareButton{
+    margin: 0 50%;
+}
+
+
+/* For changing CV Color */
+input[type="color"] {
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.coloPickerDiv{
+    /* position: absolute; */
+    left: 0%;
+    right: 0%;
+    /* top: 290%; */
+    text-align: center;
+}
+
+/* @media screen and (max-width:650px) {
+    
+    .button{
+        position: absolute;
+        left: 0%;
+        right: 0%;
+        top: 380%;    
+    }
+
+    .coloPickerDiv{
+        position: absolute;
+        left: 0%;
+        right: 0%;
+        top: 370%;
+        text-align: center;
+    }
+} */
+
+@media screen and (max-width:1000px) {
+    .button{
+        position: absolute;
+        left: 0%;
+        right: 0%;
+        top: 102%;
+    }
+
+    .coloPickerDiv{
+        position: absolute;
+        left: 0%;
+        right: 0%;
+        top: 99%;
+        text-align: center;
+    }
+}

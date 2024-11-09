@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Resume Builder</title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.js"></script>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    
+    <div id="loadingScreen" class="hidden">
+        <div class="spinner" ></div>
+    </div>
+    
+    <div class="bgLogo"></div>
+    <div class="bgColor"></div>
+
+    <div class="formContainer">
+        <div class="formDiv">
+            <div class="personalInfo">
+                <fieldset>
+                    <legend>Personal Information</legend>
+                    <label for="formName">Full Name <span class="star">*</span></label>
+                    <br>
+                    <input class="formName" type="text" title="formName" required>
+                    <br><br>
+                    <label for="formNiche">Niche <span class="star">*</span></label>
+                    <br>
+                    <input class="formNiche" type="text" title="formNiche" required>
+                    <br><br>
+                    <label for="formAbout">About</label>
+                    <br>
+                    <textarea class="formAbout" name="formAbout" id="formAbout"></textarea>
+                    <br><br>
+                    <label for="formEmail">Email <span class="star">*</span></label>
+                    <br>
+                    <input class="formEmail" id="formEmail" type="email" title="formEmail" required>
+                    <span id="errorMessage"></span>
+                    <br><br>
+                    <label for="profile_photo">Upload Image</label>
+                    <br>
+                    <input type="file" accept="image/*" name="profile_photo" id="image" title="image">
+                </fieldset>
+            </div>
+            <div class="contactInfo">
+                <fieldset>
+                    <legend>Contact</legend>
+                    <label for="formNumber">Phone</label>
+                    <br>
+                    <input class="formNumber" type="tel" title="formNumber">
+                    <br><br>
+                    <label for="formAddress">Address</label>
+                    <br>
+                    <input class="formAddress" type="text" title="formAddress">
+                </fieldset>
+            </div>
+            <div class="educationInfo">
+                <fieldset>
+                    <legend>Academics</legend>
+                    <label for="formEducationLevel">Qualification</label>
+                    <br>
+                    <input class="qualification" type="text" title="formEducationLevel">
+                    <br><br>
+                    <label for="formEducationInstitute">Name of School / College / University</label>
+                    <br>
+                    <input class="institute" type="text" title="formEducationInstitute">
+                    <button class="addEducationButton" type="button" title="addEducation" data-target="educationInfo">Add Education</button>
+                </fieldset>
+            </div>
+            <div class="skillInfo">
+                <fieldset>
+                    <legend>Skills</legend>
+                    <input type="text" title="formSkills">
+                    <button class="addSkillButton" type="button" title="addSkill">Add Skill</button>
+                </fieldset>
+            </div>
+            <div class="languageInfo">
+                <fieldset>
+                    <legend>Languages</legend>
+                    <input type="text" title="formLanguage">
+                    <button class="addLanguageButton" type="button" title="addLanguage">Add Language</button>
+                </fieldset>
+            </div>
+            <div class="experienceInfo">
+                <fieldset>
+                    <legend>Experiences</legend>
+                    <label for="formExperienceYear">Year</label>
+                    <br>
+                    <input class="formYear" type="date" title="formExperienceYear">
+                    <br><br>
+                    <label for="formCompanyName">Company / Organization</label>
+                    <br>
+                    <input class="formCompany" type="text" title="formCompanyName">
+                    <br><br>
+                    <label for="formExperiencePosition">Position</label>
+                    <br>
+                    <input class="formPosition" type="text" title="formExperiencePosition">
+                    <button class="addExperienceButton" type="button" title="addExperience">Add Experience</button>
+                </fieldset>
+            </div>
+            <div class="submitButton">
+                <button class="formSubmitButton" type="button">Generate Resume</button>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- CV Starts Here -->
+    <div class="resume" id="resume">
+        <h1 class="cvHeading" id="cvHeading">Curriculum Vitae</h1>
+        <div class="container2">
+
+            <!-- Section 1 Starts -->
+            <div class="main" id="main">
+                <div class="pic">
+                    <img src="./" class="profile" alt="profile_photo" title="profile photo">
+                </div>
+                <div class="contact formatting">
+                    <h1 class="contactHeading">Contact Details</h1>
+                    <hr>
+                    <div class="contactDetails"><br>
+                        <b>Contact Number:</b>
+                        <p id="cvContactNumber">+923123456789</p><br>
+                        <b>Email:</b>
+                        <p id="cvContactEmail">abd@gmail.com</p><br>
+                        <b>Address:</b>
+                        <p id="cvContactAddress">25 street, district central, karachi, pakistan.</p>
+                    </div>
+                    <br>
+                    <div id="cvEducationParent">
+                        <h1 class="contactHeading">Education</h1>
+                        <hr>
+                        <div class="formatting" id="cvEducationDiv" contenteditable="true"><br>
+                            <!-- <b id="cvEducationLevel">Matriculation:</b>
+                            <p id="cvEducationInstitute">Dr. Mehmood Hussain Boys Sec. School</p><br> -->
+                            <!-- <span class="cvEducationSpan" id="cvEducationSpan"></span> -->
+                        </div>
+                    </div>
+                    <button class="showHideButton" id="edUcation" type="button" data-target="cvEducationParent">Show / Hide Education</button>
+                    <div id="Skills">
+                        <h1 class="contactHeading">Skills</h1>
+                        <hr>
+                        <ul id="cvSkills" contenteditable="true">
+                            <!-- <li>Skill</li>
+                            <li>Skill</li>
+                            <li>Skill</li>
+                            <li>Skill</li>
+                            <li>Skill</li>
+                            <li>Skill</li>
+                            <li>Skill</li> -->
+                        </ul>
+                        <span id="cvSkillSpan"></span>
+                    </div>
+                    <button class="showHideButton" id="sKill" type="button" data-target="Skills">Show / Hide Skill</button>
+                    <div id="Language">
+                        <h1 class="contactHeading">Languages</h1>
+                        <hr>
+                        <ul id="cvLanguages" contenteditable="true">
+                            <!-- <li>Language</li>
+                            <li>Language</li>
+                            <li>Language</li>
+                            <li>Language</li> -->
+                        </ul>
+                        <span id="cvLanguagesSpan"></span>
+                    </div>
+                    <button class="showHideButton" id="laNguage" type="button" data-target="Language">Show / Hide Language</button>
+                </div>
+            </div>
+            <!-- Section 1 Ends -->
+
+            <!-- Section 2 Starts -->
+            <div class="second">
+                <h1 class="cvName" id="cvName">JOHN DOE</h1>
+                <p class="cvNiche" id="cvNiche">Niche</p>
+                <p class="cvDescription" id="cvDescription">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea,
+                    laborum voluptates reiciendis ipsa officia eius ut fugiat nulla asperiores accusamus aspernatur
+                    omnis laboriosam debitis. Dicta itaque porro deleniti incidunt quo.</p><br>
+
+                    <div class="cvExperience" id="cvExperience"
+                    style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-weight: 400;">
+                    <h1 class="contactHeading" id="contactHeading">Experience</h1>
+                    <hr>
+                    <ul id="Experience" contenteditable="true">
+                        <!-- <li class="cvExperienceYear">2018</li>
+                        <li class="cvExperienceCompany">Company Name</li>
+                        <li class="cvExperiencePosition">Job Position</li>
+                        <br>
+                        <li class="cvExperienceYear">2018</li>
+                        <li class="cvExperienceCompany">Company Name</li>
+                        <li class="cvExperiencePosition">Job Position</li>
+                        <br>
+                        <li class="cvExperienceYear">2018</li>
+                        <li class="cvExperienceCompany">Company Name</li>
+                        <li class="cvExperiencePosition">Job Position</li>
+                        <br> -->
+                    </ul>
+                    <span id="cvExperienceSpan"></span>
+                    <br>
+                </div>
+                <button class="showHideButton" id="exPerience" type="button" data-target="cvExperience">Show / Hide Experience</button>
+            </div>
+        </div><br>
+        <button class="button downloadButton" id="downloadButton" type="button">Download Resume</button>
+        <!-- <button class="button shareButton" id="shareButton" type="button">Share with friends</button> -->
+    
+        <!-- Color input element -->
+         <div class="coloPickerDiv">
+             <label for="colorPicker">Pick a color:</label>
+             <input type="color" id="colorPicker">
+        </div>
+    </div>
+    
+            
+    <!-- Section 2 Ends -->
+    <!-- CV Ends Here -->
+     <script type="module" src="./script.js"></script>
+     <script type="module" src="./downloadScript.js"></script>
+</body>
+
+</html>
