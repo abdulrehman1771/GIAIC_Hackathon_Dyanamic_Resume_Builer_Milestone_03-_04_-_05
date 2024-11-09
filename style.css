@@ -121,8 +121,8 @@ body{
 .formDiv input, .formDiv textarea{
     width: 100%;
     height: 30px;
+    border: none;
     outline: 1px solid lightgray;
-    box-shadow: inset 1px 1px 0 0 lightgray;
     background-color: rgba(65, 65, 65, 60%);
 }
 
@@ -131,6 +131,7 @@ body{
 }
 
 .formDiv input:focus, .formDiv textarea:focus{
+    border: none;
     outline: 2px solid #E92A2A;
     transition: 500ms;
     z-index: 99;
