@@ -309,6 +309,7 @@ formSubmitButton?.addEventListener('click', () => {
                 cvExperienceDiv?.appendChild(createBrElement());
             }
         }
+        alert('Success! Your Resume has been generated. Scroll down to see your resume.');
         document.getElementById('resume').style.display = 'block';
     }
     else {

@@ -440,8 +440,8 @@ formSubmitButton?.addEventListener('click', ()=>{
 
         }
 
-        document.getElementById('resume')!.style.display = 'block';
         alert('Success! Your Resume has been generated. Scroll down to see your resume.')
+        document.getElementById('resume')!.style.display = 'block';
 
     } else{
         alert('Please Enter Name, Niche, and Valid Email')
