@@ -436,16 +436,6 @@ input[type="color"] {
 
 
 
-@media screen and (max-width:650px) {
-    .resume{
-        position: absolute;
-        top: 220%;
-
-    }
-    
-}
-
-
 @media screen and (max-width:1000px) {
     .resume{
         position: absolute;
@@ -463,6 +453,7 @@ input[type="color"] {
     .second{
         width: 96% !important;
     }
+    
 }
 
 @media screen and (max-width: 1050px) {
@@ -498,6 +489,19 @@ input[type="color"] {
     }
 }
 
+
+
+@media screen and (max-width:650px) {
+    .resume{
+        position: absolute;
+        top: 220%;
+
+    }
+    .formDiv div fieldset{
+        width: 100%;
+    }
+    
+}
 
 
 
