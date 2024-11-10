@@ -491,16 +491,35 @@ input[type="color"] {
     .resume{
         position: absolute;
         top: 500%;
-
     }
+
     .formDiv div fieldset{
         width: 100%;
     }
+
         .formDiv{
         flex-direction: column;
     }
+
     .formDiv div{
         width: 100% !important;
+    }
+    
+    .cvHeading{
+        font-size: 1.8rem
+    }
+
+    p, li{
+        font-size: 10px;
+    }
+    h1{
+        font-size: 20px;
+    }
+    .cvName{
+        font-size: 30px;
+    }
+    .cvNiche{
+        font-size: 20px;
     }
 }
     
