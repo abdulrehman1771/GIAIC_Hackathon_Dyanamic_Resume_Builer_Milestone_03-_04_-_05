@@ -435,6 +435,21 @@ input[type="color"] {
 
 
 
+@media screen and (max-width: 1050px) {
+    p, li{
+        font-size: 15px;
+    }
+    h1{
+        font-size: 25px;
+    }
+    .cvName{
+        font-size: 40px;
+    }
+    .cvNiche{
+        font-size: 25px;
+    }
+}
+
 
 @media screen and (max-width:1000px) {
     .resume{
@@ -453,26 +468,7 @@ input[type="color"] {
     .second{
         width: 96% !important;
     }
-    
-}
 
-@media screen and (max-width: 1050px) {
-    p, li{
-        font-size: 15px;
-    }
-    h1{
-        font-size: 25px;
-    }
-    .cvName{
-        font-size: 40px;
-    }
-    .cvNiche{
-        font-size: 25px;
-    }
-}
-
-
-@media screen and (max-width:1000px) {
     .button{
         position: absolute;
         left: 0%;
@@ -487,33 +483,28 @@ input[type="color"] {
         top: 99%;
         text-align: center;
     }
+    
 }
-
 
 
 @media screen and (max-width:650px) {
     .resume{
         position: absolute;
-        top: 220%;
+        top: 500%;
 
     }
     .formDiv div fieldset{
         width: 100%;
     }
-    
-}
-
-
-
-
-
-
-
-@media screen and (max-width: 650px) {
-    .formDiv{
+        .formDiv{
         flex-direction: column;
     }
     .formDiv div{
         width: 100% !important;
     }
 }
+    
+
+
+
+
