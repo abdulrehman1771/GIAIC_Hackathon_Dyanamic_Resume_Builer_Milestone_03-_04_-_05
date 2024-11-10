@@ -103,15 +103,6 @@ body{
     justify-content: center;
 }
 
-@media screen and (max-width: 650px) {
-    .formDiv{
-        flex-direction: column;
-    }
-    .formDiv div{
-        width: 100% !important;
-    }
-}
-
 .formDiv div{
     margin: 20px 0px;
     width: 30%;
@@ -196,45 +187,6 @@ body{
 
 
 /* CV Print Format */
-@media print{
-    @media print {
-        @page {
-            size: A4;
-            margin: 10mm 0; /* Set the margin to 10mm */
-          }
-
-        body * {
-          visibility: hidden;
-        }
-        div.coloPickerDiv{
-            display: none;
-        }
-        
-        #resume, #resume * {
-          visibility: visible;
-        }
-        .showHideButton, .downloadButton, .shareButton{
-            display: none;
-        }
-        hr{
-            display: block !important   ;
-        }
-        #resume {
-          position: absolute;
-          left: 0;
-          top: 0;
-          width: 100%;
-          font-size: 0.5rem;
-        }
-        .main{
-            width: 50%;
-        }
-        .second{
-            width: 100%;
-
-        }
-      }
-}
 
 
 /* CV CSS Starts Here */
@@ -248,49 +200,6 @@ body{
     z-index: 999;
     padding: 1% 2% 3% 2%;
     display: none;
-}
-
-@media screen and (max-width:650px) {
-    .resume{
-        position: absolute;
-        top: 220%;
-
-    }
-    
-}
-
-
-@media screen and (max-width:1000px) {
-    .resume{
-        position: absolute;
-        left: 0;
-        right: 0;
-    }
-    .container2{
-        flex-direction: column;
-    }
-
-    .main{
-        width: 100% !important;
-    }
-    .second{
-        width: 96% !important;
-    }
-}
-
-@media screen and (max-width: 1050px) {
-    p, li{
-        font-size: 15px;
-    }
-    h1{
-        font-size: 25px;
-    }
-    .cvName{
-        font-size: 40px;
-    }
-    .cvNiche{
-        font-size: 25px;
-    }
 }
 
 .showHideButton{
@@ -482,6 +391,95 @@ input[type="color"] {
     }
 } */
 
+
+
+@media print{
+    @media print {
+        @page {
+            size: A4;
+            margin: 10mm 0; /* Set the margin to 10mm */
+          }
+
+        body * {
+          visibility: hidden;
+        }
+        div.coloPickerDiv{
+            display: none;
+        }
+        
+        #resume, #resume * {
+          visibility: visible;
+        }
+        .showHideButton, .downloadButton, .shareButton{
+            display: none;
+        }
+        hr{
+            display: block !important   ;
+        }
+        #resume {
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 100%;
+          font-size: 0.5rem;
+        }
+        .main{
+            width: 50%;
+        }
+        .second{
+            width: 100%;
+
+        }
+      }
+}
+
+
+
+
+@media screen and (max-width:650px) {
+    .resume{
+        position: absolute;
+        top: 220%;
+
+    }
+    
+}
+
+
+@media screen and (max-width:1000px) {
+    .resume{
+        position: absolute;
+        left: 0;
+        right: 0;
+    }
+    .container2{
+        flex-direction: column;
+    }
+
+    .main{
+        width: 100% !important;
+    }
+    .second{
+        width: 96% !important;
+    }
+}
+
+@media screen and (max-width: 1050px) {
+    p, li{
+        font-size: 15px;
+    }
+    h1{
+        font-size: 25px;
+    }
+    .cvName{
+        font-size: 40px;
+    }
+    .cvNiche{
+        font-size: 25px;
+    }
+}
+
+
 @media screen and (max-width:1000px) {
     .button{
         position: absolute;
@@ -496,5 +494,21 @@ input[type="color"] {
         right: 0%;
         top: 99%;
         text-align: center;
+    }
+}
+
+
+
+
+
+
+
+
+@media screen and (max-width: 650px) {
+    .formDiv{
+        flex-direction: column;
+    }
+    .formDiv div{
+        width: 100% !important;
     }
 }
